@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,11 +18,12 @@ const Footer = () => {
               Hasanboy
             </h3>
             <p className="text-gray-400 mb-4">
-              Front-end Developer. Zamonaviy va innovatsion web ilovalar yaratishga ishtiyoqmand.
+              Front-end Developer. Zamonaviy va innovatsion web ilovalar
+              yaratishga ishtiyoqmand.
             </p>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Blackhero97"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800 rounded-lg text-gray-400 hover:text-white hover:bg-purple-600 transition-all duration-300"
@@ -38,7 +39,7 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:hasanboyleo97@gmail.com"
+                href="mailto:hasanboydesigner@gmail.com"
                 className="p-2 bg-gray-800 rounded-lg text-gray-400 hover:text-white hover:bg-purple-600 transition-all duration-300"
               >
                 <Mail size={20} />
@@ -56,27 +57,42 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Tezkor havolalar</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a
+                  href="#home"
+                  className="text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Asosiy
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a
+                  href="#about"
+                  className="text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Men haqimda
                 </a>
               </li>
               <li>
-                <a href="#projects" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a
+                  href="#projects"
+                  className="text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Loyihalar
                 </a>
               </li>
               <li>
-                <a href="#skills" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a
+                  href="#skills"
+                  className="text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Ko'nikmalar
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a
+                  href="#contact"
+                  className="text-gray-400 hover:text-purple-400 transition-colors"
+                >
                   Bog'lanish
                 </a>
               </li>
@@ -109,7 +125,8 @@ const Footer = () => {
           className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-gray-400 text-sm flex items-center gap-2">
-            © {currentYear} Hasanboy Nurmuhammadov. Barcha huquqlar himoyalangan. Made with{' '}
+            © {currentYear} Hasanboy Nurmuhammadov. Barcha huquqlar
+            himoyalangan. Made with{" "}
             <Heart size={16} className="text-red-500 fill-current" />
           </p>
           <p className="text-gray-500 text-sm">

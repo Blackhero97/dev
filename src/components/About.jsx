@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Palette, Zap, Users, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
@@ -68,8 +69,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 sm:py-24 bg-gray-900">
+      <div className="max-w-5xl mx-auto px-4 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,33 +78,32 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
             <span className="text-white">Men </span>
             <span className="text-cyan-400">Haqimda</span>
           </h2>
-          <div className="w-20 h-1 bg-cyan-400 rounded-full mb-6 mx-auto"></div>
+          <div className="w-16 h-1 bg-cyan-400 rounded-full mb-4 mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div className="flex flex-col md:flex-row gap-6 lg:gap-10 mb-12 min-h-[400px]">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex-1 flex items-center justify-center"
           >
-            <div className="relative">
-              <div className="relative bg-gray-800 rounded-2xl p-8 border border-gray-700">
-                <h3 className="text-2xl font-bold text-white mb-4">Front-end Developer</h3>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  Men Chust shahrida Front-end mentor sifatida ishlab kelmoqdaman. Dasturlash sohasiga katta qiziqish va ehtirosim bor. Web texnologiyalari va zamonaviy framework'lar bilan ishlashni yaxshi ko'raman.
-                </p>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  React.js, Next.js, Tailwind CSS, SASS va boshqa zamonaviy texnologiyalar bilan professional darajada ishlay olaman. Har bir loyihani o'ziga xos yondashuv va innovatsion g'oyalar bilan amalga oshiraman.
-                </p>
-                <p className="text-gray-300 leading-relaxed">
-                  Mening asosiy maqsadim - foydalanuvchilarga qulay, tez va zamonaviy web ilovalar yaratish orqali biznesning raqamli dunyodagi mavqeini mustahkamlash.
-                </p>
-              </div>
+            <div className="w-full bg-gray-800 rounded-2xl p-6 border border-gray-700 shadow-xl flex flex-col justify-center items-center min-h-[320px]">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Front-end Developer</h3>
+              <p className="text-gray-300 text-sm leading-relaxed mb-2">
+                Men Chust shahrida Front-end mentor sifatida ishlab kelmoqdaman. Dasturlash sohasiga katta qiziqishim bor. Web texnologiyalari va zamonaviy framework'lar bilan ishlashni yaxshi ko'raman.
+              </p>
+              <p className="text-gray-300 text-sm leading-relaxed mb-2">
+                React.js, Next.js, Tailwind CSS, SASS va boshqa zamonaviy texnologiyalar bilan professional darajada ishlay olaman. Har bir loyihani o'ziga xos yondashuv va innovatsion g'oyalar bilan amalga oshiraman.
+              </p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Mening asosiy maqsadim - foydalanuvchilarga qulay, tez va zamonaviy web ilovalar yaratish orqali biznesning raqamli dunyodagi mavqeini mustahkamlash.
+              </p>
             </div>
           </motion.div>
 
@@ -112,23 +112,25 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 gap-6"
+            className="flex-1 flex items-center justify-center"
           >
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-purple-500 transition-all duration-300"
-              >
-                <div className="text-purple-400 mb-4">{feature.icon}</div>
-                <h4 className="text-white font-semibold mb-2">{feature.title}</h4>
-                <p className="text-gray-400 text-sm">{feature.description}</p>
-              </motion.div>
-            ))}
+            <div className="w-full grid grid-cols-2 gap-4">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-gray-800 rounded-xl p-4 border border-gray-700 hover:border-purple-500 transition-all duration-300 shadow-md"
+                >
+                  <div className="text-purple-400 mb-3">{React.cloneElement(feature.icon, {className: "w-8 h-8"})}</div>
+                  <h4 className="text-white font-semibold mb-2 text-base lg:text-lg">{feature.title}</h4>
+                  <p className="text-gray-400 text-sm lg:text-base">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
 
@@ -139,8 +141,8 @@ const About = () => {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <h3 className="text-3xl font-bold text-white text-center mb-12">Tajriba</h3>
-          <div className="space-y-6">
+          <h3 className="text-2xl lg:text-3xl font-bold text-white text-center mb-12">Tajriba</h3>
+          <div className="space-y-8">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -157,14 +159,16 @@ const About = () => {
                 </div>
                 <div className="flex-1 mb-4">
                   <div 
-                    className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 cursor-pointer"
+                    className="bg-gray-800 rounded-xl p-6 lg:p-8 border border-gray-700 hover:border-gray-600 transition-all duration-300 cursor-pointer shadow-lg"
                     onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
                   >
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <span className="text-purple-400 text-sm font-semibold">{exp.period}</span>
-                        <h4 className="text-white text-xl font-bold mt-2">{exp.title}</h4>
-                        <p className="text-gray-400 mt-2">
+                        <div className="flex flex-wrap items-center gap-3 mb-2">
+                          <span className="text-purple-400 text-sm font-semibold whitespace-nowrap px-4 py-1 rounded-full border border-white/20 bg-purple-900/30">{exp.period}</span>
+                          <h4 className="text-white text-xl font-bold m-0">{exp.title}</h4>
+                        </div>
+                        <p className="text-gray-400 mt-2 text-base">
                           {expandedIndex === index ? exp.fullDesc : exp.shortDesc}
                         </p>
                       </div>

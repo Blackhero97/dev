@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, Phone } from 'lucide-react';
-import { Code2 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { Menu, X, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Code2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,16 +11,16 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Asosiy', href: '#home' },
-    { name: 'Men haqimda', href: '#about' },
-    { name: 'Loyihalar', href: '#projects' },
-    { name: 'Ko\'nikmalar', href: '#skills' },
-    { name: 'Bog\'lanish', href: '#contact' }
+    { name: "Asosiy", href: "#home" },
+    { name: "Men haqimda", href: "#about" },
+    { name: "Loyihalar", href: "#projects" },
+    { name: "Ko'nikmalar", href: "#skills" },
+    { name: "Bog'lanish", href: "#contact" },
   ];
 
   return (
@@ -28,7 +28,9 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        scrolled
+          ? "bg-gray-900/95 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,13 +66,26 @@ const Navbar = () => {
 
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="https://github.com/Blackhero97"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               <Linkedin size={20} />
             </a>
-            <a href="mailto:hasanboyleo97@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="mailto:hasanboydesigner@gmail.com"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               <Mail size={20} />
             </a>
           </div>
@@ -100,13 +115,13 @@ const Navbar = () => {
               className="fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden"
               onClick={() => setIsOpen(false)}
             />
-            
+
             {/* Sidebar */}
             <motion.div
-              initial={{ x: '-100%' }}
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed left-0 top-0 bottom-0 w-80 max-w-[85vw] h-screen overflow-y-auto bg-gray-900 shadow-2xl md:hidden"
             >
               {/* Header */}
@@ -143,30 +158,30 @@ const Navbar = () => {
               <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-800 bg-gray-900/95">
                 <p className="text-gray-400 text-sm mb-4">Ijtimoiy tarmoqlar</p>
                 <div className="flex items-center gap-4">
-                  <a 
-                    href="https://github.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://github.com/Blackhero97"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-xl bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-200"
                   >
                     <Github size={20} />
                   </a>
-                  <a 
-                    href="https://linkedin.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-xl bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-200"
                   >
                     <Linkedin size={20} />
                   </a>
-                  <a 
-                    href="mailto:hasanboyleo97@gmail.com" 
+                  <a
+                    href="mailto:hasanboydesigner@gmail.com"
                     className="flex items-center justify-center w-12 h-12 rounded-xl bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-200"
                   >
                     <Mail size={20} />
                   </a>
-                  <a 
-                    href="tel:+998995527097" 
+                  <a
+                    href="tel:+998883715271"
                     className="flex items-center justify-center w-12 h-12 rounded-xl bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-200"
                   >
                     <Phone size={20} />

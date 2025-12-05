@@ -105,7 +105,7 @@ const Education = () => {
                     {item.icon}
                   </motion.div>
                   <div className="flex-1">
-                    <div className="flex justify-between items-start mb-2">
+                    <div className="flex flex-wrap gap-[10px] justify-between items-start mb-2">
                       <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-300">
                         {item.title}
                       </h3>

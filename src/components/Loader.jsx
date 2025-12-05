@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useMotionValue, useTransform, animate } from 'framer-motion';
 import { Code2, Sparkles } from 'lucide-react';
 
 const Loader = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
   const [loadingText, setLoadingText] = useState('Initializing');
+  const animatedProgress = useMotionValue(0);
+  const displayProgress = useTransform(animatedProgress, value => Math.round(value));
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -14,20 +17,21 @@ const Loader = ({ onLoadingComplete }) => {
           setTimeout(() => onLoadingComplete(), 800);
           return 100;
         }
-        
         // Update loading text based on progress
         if (prev < 25) setLoadingText('Initializing');
         else if (prev < 50) setLoadingText('Loading resources');
         else if (prev < 75) setLoadingText('Setting up interface');
         else if (prev < 95) setLoadingText('Almost ready');
         else setLoadingText('Welcome!');
-        
         return prev + 1.5;
       });
     }, 50);
-
     return () => clearInterval(timer);
   }, [onLoadingComplete]);
+
+  useEffect(() => {
+    animate(animatedProgress, progress, { duration: 0.5, ease: 'easeInOut' });
+  }, [progress, animatedProgress]);
 
   return (
     <motion.div
@@ -202,11 +206,9 @@ const Loader = ({ onLoadingComplete }) => {
             </motion.span>
             <motion.span
               className="text-sm font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 0.5 }}
-              key={progress}
+              style={{ fontVariantNumeric: 'tabular-nums' }}
             >
-              {progress}%
+              {displayProgress.get()}%
             </motion.span>
           </div>
         </motion.div>

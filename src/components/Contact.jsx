@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     // Add your form submission logic here
   };
 
@@ -26,26 +26,29 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
-      title: 'Email',
-      value: 'hasanboyleo97@gmail.com',
-      link: 'mailto:hasanboyleo97@gmail.com',
+      title: "Email",
+      value: "hasanboydesigner@gmail.com",
+      link: "mailto:hasanboydesigner@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      title: 'Telefon',
-      value: '+998883715271',
-      link: 'tel:+998883715271',
+      title: "Telefon",
+      value: "+998883715271",
+      link: "tel:+998883715271",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: 'Manzil',
-      value: 'Chust, Namangan, O\'zbekiston',
+      title: "Manzil",
+      value: "Chust, Namangan, O'zbekiston",
       link: null,
     },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-800 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-20 bg-gray-800 relative overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
@@ -66,7 +69,8 @@ const Contact = () => {
           </h2>
           <div className="w-20 h-1 bg-purple-400 rounded-full mb-6 mx-auto"></div>
           <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-            Sizni qiziqtirgan savollar yoki takliflaringiz bo'lsa, men bilan bog'laning
+            Sizni qiziqtirgan savollar yoki takliflaringiz bo'lsa, men bilan
+            bog'laning
           </p>
         </motion.div>
 
@@ -79,8 +83,10 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="bg-gray-900 rounded-2xl p-8 border border-gray-700">
-              <h3 className="text-2xl font-bold text-white mb-6">Aloqa ma'lumotlari</h3>
-              
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Aloqa ma'lumotlari
+              </h3>
+
               <div className="space-y-6 mb-8">
                 {contactInfo.map((info, index) => (
                   <motion.div
@@ -95,7 +101,9 @@ const Contact = () => {
                       {info.icon}
                     </div>
                     <div>
-                      <h4 className="text-gray-400 text-sm mb-1">{info.title}</h4>
+                      <h4 className="text-gray-400 text-sm mb-1">
+                        {info.title}
+                      </h4>
                       {info.link ? (
                         <a
                           href={info.link}
@@ -112,10 +120,12 @@ const Contact = () => {
               </div>
 
               <div className="border-t border-gray-700 pt-6">
-                <h4 className="text-white font-semibold mb-4">Ijtimoiy tarmoqlar</h4>
+                <h4 className="text-white font-semibold mb-4">
+                  Ijtimoiy tarmoqlar
+                </h4>
                 <div className="flex gap-4">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/Blackhero97"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-gray-800 rounded-lg text-gray-400 hover:text-white hover:bg-purple-600 transition-all duration-300"
@@ -131,7 +141,7 @@ const Contact = () => {
                     <Linkedin size={24} />
                   </a>
                   <a
-                    href="mailto:hasanboyleo97@gmail.com"
+                    href="mailto:hasanboydesigner@gmail.com"
                     className="p-3 bg-gray-800 rounded-lg text-gray-400 hover:text-white hover:bg-purple-600 transition-all duration-300"
                   >
                     <Mail size={24} />
@@ -159,10 +169,16 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="bg-gray-900 rounded-2xl p-8 border border-gray-700">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-gray-900 rounded-2xl p-8 border border-gray-700"
+            >
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-gray-400 text-sm font-semibold mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-gray-400 text-sm font-semibold mb-2"
+                  >
                     Ismingiz
                   </label>
                   <input
@@ -178,7 +194,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-gray-400 text-sm font-semibold mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-gray-400 text-sm font-semibold mb-2"
+                  >
                     Emailingiz
                   </label>
                   <input
@@ -194,7 +213,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-gray-400 text-sm font-semibold mb-2">
+                  <label
+                    htmlFor="phone"
+                    className="block text-gray-400 text-sm font-semibold mb-2"
+                  >
                     Telefon
                   </label>
                   <input
@@ -209,7 +231,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-gray-400 text-sm font-semibold mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-gray-400 text-sm font-semibold mb-2"
+                  >
                     Xabar
                   </label>
                   <textarea

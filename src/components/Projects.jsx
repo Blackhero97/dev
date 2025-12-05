@@ -1,63 +1,72 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Eye } from 'lucide-react';
-import { useState } from 'react';
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Eye } from "lucide-react";
+import { useState } from "react";
 
 const Projects = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const projects = [
     {
-      title: 'E-commerce Platform',
-      description: 'To\'liq funksional onlayn do\'kon - React va Redux bilan',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop',
-      tags: ['React', 'Redux', 'Tailwind CSS', 'REST API'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: "E-commerce Platform",
+      description: "To'liq funksional onlayn do'kon - React va Redux bilan",
+      image:
+        "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+      tags: ["React", "Redux", "Tailwind CSS", "REST API"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
-      title: 'Portfolio Website',
-      description: 'Shaxsiy portfolio animatsiyalar va zamonaviy dizayn bilan',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-      tags: ['Next.js', 'Framer Motion', 'Tailwind CSS'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: "Portfolio Website",
+      description: "Shaxsiy portfolio animatsiyalar va zamonaviy dizayn bilan",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
-      title: 'Task Management App',
-      description: 'Vazifalarni boshqarish - samarali ish jarayoni uchun',
-      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop',
-      tags: ['React', 'TypeScript', 'Firebase', 'Material-UI'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: "Task Management App",
+      description: "Vazifalarni boshqarish - samarali ish jarayoni uchun",
+      image:
+        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
+      tags: ["React", "TypeScript", "Firebase", "Material-UI"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
-      title: 'Weather Dashboard',
-      description: 'Ob-havo dashboardi real-time ma\'lumotlar bilan',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=600&fit=crop',
-      tags: ['React', 'Chart.js', 'Weather API', 'SASS'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: "Weather Dashboard",
+      description: "Ob-havo dashboardi real-time ma'lumotlar bilan",
+      image:
+        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=600&fit=crop",
+      tags: ["React", "Chart.js", "Weather API", "SASS"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
-      title: 'Social Media Dashboard',
-      description: 'Ijtimoiy tarmoqlar statistikasi kuzatish paneli',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      tags: ['Next.js', 'TypeScript', 'Redux Toolkit', 'Chart.js'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: "Social Media Dashboard",
+      description: "Ijtimoiy tarmoqlar statistikasi kuzatish paneli",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      tags: ["Next.js", "TypeScript", "Redux Toolkit", "Chart.js"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
-      title: 'Blog Platform',
-      description: 'Full-stack blog platformasi CMS funksiyalari bilan',
-      image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop',
-      tags: ['Next.js', 'MongoDB', 'Authentication', 'Markdown'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: "Blog Platform",
+      description: "Full-stack blog platformasi CMS funksiyalari bilan",
+      image:
+        "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop",
+      tags: ["Next.js", "MongoDB", "Authentication", "Markdown"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-900 relative overflow-hidden">
+    <section
+      id="projects"
+      className="py-20 bg-gray-900 relative overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-10 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl"></div>
@@ -98,10 +107,8 @@ const Projects = () => {
                 {/* Image Container */}
                 <div className="relative overflow-hidden h-56">
                   {/* Gradient Overlay */}
-                  <motion.div 
-                    className="absolute inset-0 bg-rose-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
-                  />
-                  
+                  <motion.div className="absolute inset-0 bg-rose-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+
                   {/* Image */}
                   <motion.img
                     src={project.image}
@@ -112,10 +119,10 @@ const Projects = () => {
                     }}
                     transition={{ duration: 0.6 }}
                   />
-                  
+
                   {/* Dark Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-800 via-gray-800/60 to-transparent"></div>
-                  
+
                   {/* Quick View Button */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -187,7 +194,7 @@ const Projects = () => {
           className="text-center mt-12"
         >
           <a
-            href="https://github.com"
+            href="https://github.com/Blackhero97"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gray-800 border border-gray-700 text-white rounded-2xl font-semibold hover:bg-gray-700 hover:border-gray-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"

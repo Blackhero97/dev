@@ -67,20 +67,20 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-gray-900 relative overflow-hidden">
+    <section id="skills" className="py-10 sm:py-16 bg-gray-900 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-teal-500/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-2xl sm:max-w-4xl lg:max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-white">Ko'nikmalar va </span>
@@ -93,7 +93,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Skill Categories */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 mb-8 sm:mb-12">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.title}
@@ -101,18 +101,18 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: catIndex * 0.1 }}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-gray-600 transition-all duration-300 group"
+              className="bg-gray-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-700/50 hover:border-gray-600 transition-all duration-300 group"
             >
               {/* Category Header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`p-3 rounded-xl bg-gradient-to-br ${category.color} text-white`}>
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className={`p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${category.color} text-white`}>
                   {category.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+                <h3 className="text-lg sm:text-2xl font-bold text-white">{category.title}</h3>
               </div>
 
               {/* Skills in Category */}
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {category.skills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
@@ -122,14 +122,14 @@ const Skills = () => {
                     transition={{ delay: catIndex * 0.1 + index * 0.05 }}
                     className="group/skill"
                   >
-                    <div className="flex justify-between items-center mb-2 gap-2">
-                      <span className="flex items-center gap-2 text-gray-300 font-medium group-hover/skill:text-white transition-colors">
+                    <div className="flex justify-between items-center mb-1 gap-1 sm:gap-2">
+                      <span className="flex items-center gap-1 sm:gap-2 text-gray-300 text-sm sm:text-base font-medium group-hover/skill:text-white transition-colors">
                         {skill.icon}
                         {skill.name}
                       </span>
-                      <span className="text-teal-400 font-bold text-sm">{skill.level}%</span>
+                      <span className="text-teal-400 font-bold text-xs sm:text-sm">{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-gray-900 rounded-full h-2.5 overflow-hidden">
+                    <div className="w-full bg-gray-900 rounded-full h-2 sm:h-2.5 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -162,10 +162,10 @@ const Skills = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16"
+          className="mt-8 sm:mt-16"
         >
-          <h3 className="text-2xl font-bold text-white text-center mb-8">Qo'shimcha Ko'nikmalar</h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <h3 className="text-lg sm:text-2xl font-bold text-white text-center mb-4 sm:mb-8">Qo'shimcha Ko'nikmalar</h3>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {['Responsive Design', 'REST API', 'SEO', 'Performance', 'UI/UX', 'Agile'].map((skill, index) => (
               <motion.span
                 key={skill}
@@ -174,7 +174,7 @@ const Skills = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="px-5 py-2.5 bg-gradient-to-r from-gray-800 to-gray-900 border border-gray-700 text-gray-300 rounded-full text-sm font-medium hover:border-teal-500/50 hover:text-white hover:shadow-lg hover:shadow-teal-500/10 transition-all duration-300 cursor-pointer"
+                className="px-3 sm:px-5 py-2 bg-gradient-to-r from-gray-800 to-gray-900 border border-gray-700 text-gray-300 rounded-full text-xs sm:text-sm font-medium hover:border-teal-500/50 hover:text-white hover:shadow-lg hover:shadow-teal-500/10 transition-all duration-300 cursor-pointer"
               >
                 {skill}
               </motion.span>
